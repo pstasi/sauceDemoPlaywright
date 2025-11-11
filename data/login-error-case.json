@@ -1,0 +1,26 @@
+{
+  "testCases": [
+    {
+      "no-username-or-password": {
+        "description": "Submit form without entering username or password",
+        "input": { "username": "", "password": "" },
+        "expectedError": "Epic sadface: Username is required"
+      },
+      "no-username": {
+        "description": "Submit form without entering username",
+        "input": { "username": "", "password": "secret_sauce" },
+        "expectedError": "Epic sadface: Username is required"
+      },
+      "no-password": {
+        "description": "Submit form without entering password",
+        "input": { "username": "standard_user", "password": "" },
+        "expectedError": "Epic sadface: Password is required"
+      },
+      "invalid-username-and-password": {
+        "description": "Submit form with invalid credentials",
+        "input": { "username": "wrong_user", "password": "wrong_pass" },
+        "expectedError": "Epic sadface: Username and password do not match any user in this service"
+      }
+    }
+  ]
+}
